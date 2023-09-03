@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head>
     <meta charset="UTF-8">
@@ -10,69 +11,93 @@
     <title>Guess the Number - Game</title>
 </head>
 
-<body class="column align-items-center just-cont-space-between">
-    <div class= "width100">
-        <div class="column align-items-center">
-        <div id="headerDiv" class="row just-cont-flex-end align-items-center width100">
-            <h1 id="h1" class="text-align-center width33">Guess The Number</h1>
-            <div id="livesAndPoints" class="width33 relative-position">
-                <div id="livesEmpty" class="row just-cont-flex-end align-items-center relative-position z-index1">
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+<body class="column just-cont-space-between align-items-center height100vh">
+
+    <div id="gamingArea" class="column align-items-center width100">
+
+        <div id="initialPage" class="column align-items-center width100">
+
+            <div id="gamingHeader" class="row just-cont-flex-end width100">
+
+                <!--Game Title-->
+                <h1 id="gameTitle" class="width33 text-align-center">Guess The Number</h1>
+
+                <!--Lives + Points-->
+                <div id="heartsAndPts" class="width33 relative-position">
+
+                    <!--Lives Lost-->
+                    <div id="livesLost" class="row just-cont-flex-end z-index1">
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-regular fa-heart" aria-hidden="true"></i></p>
+                    </div>
+
+                    <!--Current Lives-->
+                    <div id="livesCurrent" class="row just-cont-flex-end absolute-position z-index2 right-upper00">
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                        <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
+                    </div>
+
+                    <!--Points Display-->
+                    <div id="ptsArea" class="row border-ptsArea absolute-position right-upper040">
+                        <p id="ptsText" class="width50">Pts:</p>
+                        <p id="ptsCount" class="width50">0000</p>
+                    </div>
                 </div>
-                <div id="livesFull"
-                    class="row just-cont-flex-end align-items-center absolute-position right-upper-corner z-index2">
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                    <p><i class="fa-solid fa-heart" aria-hidden="true"></i></p>
-                </div>
-                <div id="ptsDiv" class="row just-cont-space-around absolute-position right-upper-corner2 width33 border-pts">
-                    <p id="pts" class="width50">Pts:</p>
-                    <p id="ptsCount" class="width50">0000</p>
-                </div>
+
             </div>
-        </div>
-        <div class="width50 column align-items-center">
-            <p id="p" class="text-align-center">Choose the difficulty:</p>
+
+            <!--Difficulty Buttons-->
+            <p id="chooseBtnP">Choose the difficulty:</p>
             <button class="width25">Easy</button>
             <button class="width25">Medium</button>
             <button class="width25">Hard</button>
         </div>
-        <div id="numberGeneratedDiv" class="width50 column align-items-center just-cont-center">
+
+        <!--Gaming Setup-->
+        <div id="gameSetup" class="column align-items-center">
             <label for="number" id="chooseNumberText"></label>
             <input id="number" type="number">
-            <button id="guess" class="width10">Guess</button>
+            <button id="guessBtn" class="width10">Guess</button>
             <p id="numberGeneratedText">Number Generated: </p>
             <p id="numberGenerated"></p>
             <p id="alertMessages" class="text-align-center"></p>
         </div>
-        </div>
-        <div id="playAgainDiv" class="column align-items-center text-align-center">
+
+        <!--Game Over Page-->
+        <div id="gameOverPage" class="column align-items-center text-align-center">
             <h2>Game Over</h2>
             <p>You ran out of lives! Click the button to restart.</p>
             <p>You scored:</p>
             <p id="totalPoints"></p>
             <button id="playAgain" class="width10" onclick="window.location.href='index.html'">Play Again</button>
         </div>
+
     </div>
-    <div class= "width100 absolute-position middle-bottom-corner">
-        <div id="livesPlacePhone" class="column align-items-center just-cont-center fit-content"></div>
+
+    <!--Mobile Adaptation-->
+    <div id="progressArea">
+        <div id="heartsAndPts2" class="column-reverse align-items-center relative-position"></div>
     </div>
+
+    <!--Scripts-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
+
+</html>

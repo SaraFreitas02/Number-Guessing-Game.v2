@@ -1,80 +1,63 @@
 $(document).ready(function () {
-    const h1 = $("#h1");
-    const p = $("#p");
+    const gameTitle = $("#gameTitle");
+    const p = $("#chooseBtnP");
     const chooseNumberText = $("#chooseNumberText");
     const input = $("input");
-    const guess = $("#guess");
+    const guessBtn = $("#guessBtn");
     const numberGeneratedText = $("#numberGeneratedText");
     const numberGenerated = $("#numberGenerated");
     const playAgain = $("#playAgain")
-    const buttons = $("button").not(guess).not(playAgain);
+    const difficultyButtons = $("button").not(guessBtn).not(playAgain);
     const alertMsg = $("#alertMessages");
-    const livesEmpty = $("#livesEmpty");
-    const livesFull = $("#livesFull");
+    const livesLost = $("#livesLost");
+    const livesCurrent = $("#livesCurrent");
     const ptsCount = $("#ptsCount");
-    const ptsDiv = $("#ptsDiv");
-    let livesFullIndex = 0;
-    const playAgainDiv = $("#playAgainDiv");
+    const ptsArea = $("#ptsArea");
+    let livesCurrentIndex = 0;
+    const gameOverPage = $("#gameOverPage");
     const totalPts = $("#totalPoints");
 
-    h1.hide();
+    gameTitle.hide();
     p.hide();
-    buttons.hide();
+    difficultyButtons.hide();
     chooseNumberText.hide();
     input.hide();
-    guess.hide();
+    guessBtn.hide();
     numberGeneratedText.hide();
     numberGenerated.hide();
     alertMsg.hide();
-    livesEmpty.hide();
-    livesFull.hide();
-    ptsDiv.hide();
-    playAgainDiv.hide();
-
-    if (window.innerWidth < 768) {
-        const firstParent = $("#headerDiv");
-        const livesAndPts = $("#livesAndPoints");
-        const newParent = $("#livesPlacePhone");
-
-        firstParent.find(livesAndPts).remove();
-        newParent.append(livesAndPts);
-
-        firstParent.removeClass("just-cont-flex-end")
-        livesFull.removeClass("right-upper-corner");
-        ptsDiv.removeClass("right-upper-corner2");
-
-        firstParent.addClass("just-cont-center");
-        livesFull.addClass("middle-bottom-corner");
-        ptsDiv.addClass("middle-bottom-corner2");
-      }
-
+    livesLost.hide();
+    livesCurrent.hide();
+    ptsArea.hide();
+    gameOverPage.hide();
 
     function intro() {
-        h1.fadeIn(1300);
+        gameTitle.fadeIn(1300);
         p.delay(900).fadeIn(1500);
-        buttons.delay(1500).show(1500);
+        difficultyButtons.delay(1500).show(1500);
     }
 
     function startGame() {
         p.delay(100).slideUp(1200, function () {
             p.hide();
         })
-        buttons.eq(0).delay(200).slideUp(1200, function () {
-            buttons.eq(0).hide();
+        difficultyButtons.eq(0).delay(200).slideUp(1200, function () {
+            difficultyButtons.eq(0).hide();
         })
-        buttons.eq(1).delay(300).slideUp(1200, function () {
-            buttons.eq(1).hide();
+        difficultyButtons.eq(1).delay(300).slideUp(1200, function () {
+            difficultyButtons.eq(1).hide();
         })
-        buttons.eq(2).delay(400).slideUp(1200, function () {
-            buttons.eq(2).hide();
+        difficultyButtons.eq(2).delay(400).slideUp(1200, function () {
+            difficultyButtons.eq(2).hide();
         })
         input.delay(1200).fadeIn(1200, function () {
             input.show();
         });
-        guess.delay(1300).fadeIn(1200);
-        livesEmpty.delay(1000).fadeIn(1200);
-        livesFull.delay(1000).fadeIn(1200);
-        ptsDiv.delay(1000).fadeIn(1200);
+        guessBtn.delay(1300).fadeIn(1200);
+        livesLost.delay(1000).fadeIn(1200);
+        livesCurrent.delay(1000).fadeIn(1200);
+        ptsArea
+            .delay(1000).fadeIn(1200);
     }
 
     function easy() {
@@ -92,20 +75,20 @@ $(document).ready(function () {
         chooseNumberText.delay(1200).show(1000);
     }
 
-    buttons.eq(0).click(function () {
+    difficultyButtons.eq(0).click(function () {
         startGame();
         easy();
     });
-    buttons.eq(1).click(function () {
+    difficultyButtons.eq(1).click(function () {
         startGame();
         medium();
     });
-    buttons.eq(2).click(function () {
+    difficultyButtons.eq(2).click(function () {
         startGame();
         hard();
     });
 
-    function guessEasyMode() {
+    function guessBtnEasyMode() {
         if (input.val() > 10) {
             alertMsg.text("The number must be lower than 11.")
             alertMsg.show(500);
@@ -117,14 +100,14 @@ $(document).ready(function () {
             input.css("border-color", "rgb(180, 22, 70)");
             alertMsg.delay(1000).hide(500);
         } else {
-            guess.prop("disabled", true);
+            guessBtn.prop("disabled", true);
             numberGenerated.text(Math.ceil(Math.random() * 10));
             numberGeneratedText.delay(100).slideDown(1000);
             numberGeneratedText.delay(2000).slideUp(1000);
             numberGenerated.delay(200).slideDown(1000);
             numberGenerated.delay(2000).slideUp(1000);
             if (numberGenerated.text() === input.val()) {
-                alertMsg.text("You guessed it right!.")
+                alertMsg.text("You guessed it right!")
                 setTimeout(function () {
                     alertMsg.show();
                     alertMsg.addClass("scaleInOut-animation");
@@ -134,7 +117,7 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
                 let ptsWon = 10;
@@ -153,34 +136,38 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
-                const livesFullCurrent = livesFull.children().eq(livesFullIndex);
-                livesFullCurrent.addClass("scaleOut-animation");
-                livesFullIndex = (livesFullIndex + 1) % livesFull.children().length;
-                if (livesFull.children().last().hasClass("scaleOut-animation")){
+                const livesCurrentCurrent = livesCurrent.children().eq(livesCurrentIndex);
+                livesCurrentCurrent.addClass("scaleOut-animation");
+                livesCurrentIndex = (livesCurrentIndex + 1) % livesCurrent.children().length;
+                if (livesCurrent.children().last().hasClass("scaleOut-animation")) {
                     const totalPtsText = ptsCount.text();
                     totalPts.text(totalPtsText);
-                    h1.hide();
-                    p.hide();
-                    buttons.hide();
-                    chooseNumberText.hide();
-                    input.hide();
-                    guess.hide();
-                    numberGeneratedText.hide();
-                    numberGenerated.hide();
-                    alertMsg.hide();
-                    livesEmpty.hide();
-                    livesFull.hide();
-                    ptsDiv.hide();
-                    playAgainDiv.show(1000);
+                    setTimeout(function () {
+                        gameTitle.hide();
+                        p.hide();
+                        difficultyButtons.hide();
+                        chooseNumberText.hide();
+                        input.hide();
+                        guessBtn.hide();
+                        numberGeneratedText.hide();
+                        numberGenerated.hide();
+                        alertMsg.hide();
+                        livesLost.hide();
+                        livesCurrent.hide();
+                        ptsArea.hide();
+                    }, 1000);
+                    setTimeout(function () {
+                        gameOverPage.show(1000);
+                    }, 1000)
                 }
             }
         }
     }
 
-    function guessMediumMode() {
+    function guessBtnMediumMode() {
         if (input.val() > 25) {
             alertMsg.text("The number must be lower than 26.")
             alertMsg.show(500);
@@ -192,14 +179,14 @@ $(document).ready(function () {
             input.css("border-color", "rgb(180, 22, 70)");
             alertMsg.delay(1000).hide(500);
         } else {
-            guess.prop("disabled", true);
+            guessBtn.prop("disabled", true);
             numberGenerated.text(Math.ceil(Math.random() * 25));
             numberGeneratedText.delay(100).slideDown(1000);
             numberGeneratedText.delay(2000).slideUp(1000);
             numberGenerated.delay(200).slideDown(1000);
             numberGenerated.delay(2000).slideUp(1000);
             if (numberGenerated.text() === input.val()) {
-                alertMsg.text("You guessed it right!.")
+                alertMsg.text("You guessed it right!")
                 setTimeout(function () {
                     alertMsg.show();
                     alertMsg.addClass("scaleInOut-animation");
@@ -209,7 +196,7 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
                 let ptsWon = 20;
@@ -228,34 +215,38 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
-                const livesFullCurrent = livesFull.children().eq(livesFullIndex);
-                livesFullCurrent.addClass("scaleOut-animation");
-                livesFullIndex = (livesFullIndex + 1) % livesFull.children().length;
-                if (livesFull.children().last().hasClass("scaleOut-animation")) {
+                const livesCurrentCurrent = livesCurrent.children().eq(livesCurrentIndex);
+                livesCurrentCurrent.addClass("scaleOut-animation");
+                livesCurrentIndex = (livesCurrentIndex + 1) % livesCurrent.children().length;
+                if (livesCurrent.children().last().hasClass("scaleOut-animation")) {
                     const totalPtsText = ptsCount.text();
                     totalPts.text(totalPtsText);
-                    h1.delay(1000).hide();
-                    p.delay(1000).hide();
-                    buttons.delay(1000).hide();
-                    chooseNumberText.hide();
-                    input.delay(1000).hide();
-                    guess.delay(1000).hide();
-                    numberGeneratedText.delay(1000).hide();
-                    numberGenerated.delay(1000).hide();
-                    alertMsg.delay(1000).hide();
-                    livesEmpty.delay(1000).hide();
-                    livesFull.delay(1000).hide();
-                    ptsDiv.delay(1000).hide();
-                    playAgainDiv.delay(1000).show(1000);
+                    setTimeout(function () {
+                        gameTitle.hide();
+                        p.hide();
+                        difficultyButtons.hide();
+                        chooseNumberText.hide();
+                        input.hide();
+                        guessBtn.hide();
+                        numberGeneratedText.hide();
+                        numberGenerated.hide();
+                        alertMsg.hide();
+                        livesLost.hide();
+                        livesCurrent.hide();
+                        ptsArea.hide();
+                    }, 1000);
+                    setTimeout(function () {
+                        gameOverPage.show(1000);
+                    }, 1000)
                 }
             }
         }
     }
 
-    function guessHardMode() {
+    function guessBtnHardMode() {
         if (input.val() > 50) {
             alertMsg.text("The number must be lower than 51.")
             alertMsg.show(500);
@@ -267,14 +258,14 @@ $(document).ready(function () {
             input.css("border-color", "rgb(180, 22, 70)");
             alertMsg.delay(1000).hide(500);
         } else {
-            guess.prop("disabled", true);
+            guessBtn.prop("disabled", true);
             numberGenerated.text(Math.ceil(Math.random() * 50));
             numberGeneratedText.delay(100).slideDown(1000);
             numberGeneratedText.delay(2000).slideUp(1000);
             numberGenerated.delay(200).slideDown(1000);
             numberGenerated.delay(2000).slideUp(1000);
             if (numberGenerated.text() === input.val()) {
-                alertMsg.text("You guessed it right!.")
+                alertMsg.text("You guessed it right!")
                 setTimeout(function () {
                     alertMsg.show();
                     alertMsg.addClass("scaleInOut-animation");
@@ -284,7 +275,7 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
                 let ptsWon = 30;
@@ -303,40 +294,44 @@ $(document).ready(function () {
                     alertMsg.removeClass("scaleInOut-animation");
                 }, 4000);
                 setTimeout(function () {
-                    guess.prop("disabled", false);
+                    guessBtn.prop("disabled", false);
                 }, 4000);
                 input.val('');
-                const livesFullCurrent = livesFull.children().eq(livesFullIndex);
-                livesFullCurrent.addClass("scaleOut-animation");
-                livesFullIndex = (livesFullIndex + 1) % livesFull.children().length;
-                if (livesFull.children().last().hasClass("scaleOut-animation")){
+                const livesCurrentCurrent = livesCurrent.children().eq(livesCurrentIndex);
+                livesCurrentCurrent.addClass("scaleOut-animation");
+                livesCurrentIndex = (livesCurrentIndex + 1) % livesCurrent.children().length;
+                if (livesCurrent.children().last().hasClass("scaleOut-animation")) {
                     const totalPtsText = ptsCount.text();
                     totalPts.text(totalPtsText);
-                    h1.delay(1000).hide();
-                    p.delay(1000).hide();
-                    buttons.delay(1000).hide();
-                    chooseNumberText.hide();
-                    input.delay(1000).hide();
-                    guess.delay(1000).hide();
-                    numberGeneratedText.delay(1000).hide();
-                    numberGenerated.delay(1000).hide();
-                    alertMsg.delay(1000).hide();
-                    livesEmpty.delay(1000).hide();
-                    livesFull.delay(1000).hide();
-                    ptsDiv.delay(1000).hide();
-                    playAgainDiv.delay(1000).show(1000);
+                    setTimeout(function () {
+                        gameTitle.hide();
+                        p.hide();
+                        difficultyButtons.hide();
+                        chooseNumberText.hide();
+                        input.hide();
+                        guessBtn.hide();
+                        numberGeneratedText.hide();
+                        numberGenerated.hide();
+                        alertMsg.hide();
+                        livesLost.hide();
+                        livesCurrent.hide();
+                        ptsArea.hide();
+                    }, 1000);
+                    setTimeout(function () {
+                        gameOverPage.show(1000);
+                    }, 1000)
                 }
             }
         }
     }
 
-    guess.on("click", function () {
+    guessBtn.on("click", function () {
         if (chooseNumberText.text() === "Choose a number from 1 to 10.") {
-            guessEasyMode();
+            guessBtnEasyMode();
         } else if (chooseNumberText.text() === "Choose a number from 1 to 25.") {
-            guessMediumMode();
+            guessBtnMediumMode();
         } else {
-            guessHardMode();
+            guessBtnHardMode();
         }
     })
 
