@@ -31,6 +31,37 @@ $(document).ready(function () {
     ptsArea.hide();
     gameOverPage.hide();
 
+    if (window.innerWidth < 768){
+        const gamingArea = $("#gamingArea");
+        gamingArea.removeClass("width100");
+        gamingArea.addClass("width50");
+
+        const initialPage = $("#initialPage");
+        initialPage.addClass("width100");
+
+        gameTitle.removeClass("width33");
+
+        const gamingHeader = $("#gamingHeader");
+        gamingHeader.removeClass();
+
+        const heartsAndPts = $("#heartsAndPts");
+        const heartsAndPts2 = $("#heartsAndPts2");
+        heartsAndPts.empty();
+        heartsAndPts2.append(livesLost);
+        heartsAndPts2.append(livesCurrent);
+        heartsAndPts2.append(ptsArea);
+
+        livesLost.removeClass("just-cont-flex-end");
+        livesLost.addClass("relative-position");
+
+        livesCurrent.removeClass("just-cont-flex-end");
+        livesCurrent.removeClass("right-upper00");
+        livesCurrent.addClass("bottom0");
+
+        ptsArea.removeClass("right-upper040");
+        ptsArea.addClass("bottom40");
+    }
+
     function intro() {
         gameTitle.fadeIn(1300);
         p.delay(900).fadeIn(1500);
