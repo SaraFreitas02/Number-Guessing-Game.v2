@@ -40,7 +40,7 @@ Your points will accumulate throughout the game.
 
 However, if you make an incorrect guess, you'll **lose a heart** (life). You start with a total of 10 lives.
 
-## 5. Game Over... Play again
+### 5. Game Over... Play again
 If you **run out of lives**, the game will come to an end, and a *'Game Over'* page will appear. Here, you can view the total number of points you earned during the round.
 
 To start a new game, simply **click the *'Play Again'*** button displayed on the *'Game Over'* page. This will take you back to the beginning, where you can once again choose a difficulty level.
