@@ -1,0 +1,266 @@
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.height50{
+  height: 50%;
+}
+
+.column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.row{
+  display: flex;
+}
+
+.align-items-center{
+    align-items: center;
+}
+
+.just-cont-flex-start{
+  justify-content: flex-start;
+}
+
+.just-cont-flex-end{
+  justify-content: flex-end;
+}
+
+.just-cont-space-between{
+  justify-content: space-between;
+}
+
+.just-cont-center{
+  justify-content: center;
+}
+
+.width50{
+    width: 50%;
+}
+
+button{
+    height: 30px;
+    margin: 5px;
+    border-radius: 20px;
+}
+
+.text-align-center{
+    text-align: center;
+}
+
+.width10{
+    width: 10%;
+}
+
+.width25{
+    width: 25%;
+}
+
+.width100{
+  width: 100%;
+}
+
+.width33{
+  width: 33%;
+}
+
+.padding-right0{
+  padding-right: 0;
+}
+
+.z-index1{
+  z-index: 1;
+}
+
+.z-index2{
+  z-index: 2;
+}
+
+.relative-position{
+  position: relative;
+}
+
+.absolute-position{
+  position: absolute;
+}
+
+.right-upper-corner{
+  right: 0;
+  top: 0;
+}
+
+.right-upper-corner2{
+  right: 0;
+  top: 40px;
+}
+
+.middle-bottom-corner{
+  right:0;
+  left:0;
+  bottom: 0;
+}
+
+.middle-bottom-corner2{
+  right: 33%;
+  left: 33%;
+  bottom: 40px;
+}
+
+.border-pts {
+  border: solid 1px;
+  width: 18%;
+  border-radius: 20px;
+  margin: 5px;
+  min-width: fit-content;
+  border-left-color:rgb(180, 22, 70); 
+  border-right-color: rgb(180, 22, 70);
+  border-top-color: rgb(81, 81, 248) ;
+  border-bottom-color: rgb(81, 81, 248);
+}
+
+input{
+    height: 20px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    text-align: center;
+    border-left-color:rgb(180, 22, 70); 
+    border-right-color: rgb(180, 22, 70);
+    border-top-color: rgb(81, 81, 248) ;
+    border-bottom-color: rgb(81, 81, 248);
+}
+
+#pts, #ptsCount{
+  font-weight: bold;
+  font-size: 18px;
+  margin-left: 5px;
+  background-image: linear-gradient(to right, rgb(180, 22, 70), rgb(81, 81, 248));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+button {
+  min-width: fit-content;
+  background-image: linear-gradient(to right, rgb(180, 22, 70), rgb(81, 81, 248));
+  color: white;
+  border: white;
+  font-size: 17px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to right, rgb(180, 22, 70), rgb(81, 81, 248));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  border: solid 1px;
+  border-left-color:rgb(180, 22, 70); 
+  border-right-color: rgb(180, 22, 70);
+  border-top-color: rgb(81, 81, 248) ;
+  border-bottom-color: rgb(81, 81, 248);
+  font-weight: bold;
+}
+
+
+#livesFull p, #livesEmpty p{
+  color: rgb(180, 22, 70) ;
+}
+
+h1, h2{
+  background-image: linear-gradient(to right, rgb(180, 22, 70), rgb(81, 81, 248));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+#alertMessages{
+  color: rgb(180, 22, 70); 
+}
+
+p, h1, button, input {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#playAgainDiv {
+  width: 30%;
+  height: 250px;
+  padding: 20px;
+  min-width: fit-content;
+  min-height: fit-content;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px;
+  border-left-color:rgb(180, 22, 70); 
+  border-right-color: rgb(180, 22, 70);
+  border-top-color: rgb(81, 81, 248) ;
+  border-bottom-color: rgb(81, 81, 248);
+  border-radius: 80px;
+  position: absolute;
+  z-index: 4;
+  top: 100px;
+  left: 30%;
+  right: 30%;
+}
+
+button:disabled{
+  color:rgb(81, 81, 248) ;
+  border: solid 1px;
+  border-color: rgb(81, 81, 248);
+  background-color: white;
+  background-image: none;
+}
+
+button:disabled:hover{
+  font-weight: normal;
+  cursor: default;
+}
+
+#totalPoints {
+  font-weight: bold;
+  font-size: 18px;
+  color:rgb(81, 81, 248);
+}
+
+/* Define a keyframes animation named 'scaleInAndOut' */
+@keyframes scaleInAndOut {
+    0% {
+      transform: scale(0); /* Start at scale 0 (invisible) */
+    }
+    50% {
+      transform: scale(1); /* Scale up to 2 times the original size */
+    }
+    100% {
+      transform: scale(0); /* Scale back to 0 (invisible) */
+    }
+  }
+  
+  /* Apply the animation to an element */
+  .scaleInOut-animation {
+    animation-name: scaleInAndOut; /* Use the keyframes animation */
+    animation-duration: 3s; /* Animation duration in seconds */
+    animation-timing-function: ease; /* Animation timing function (e.g., ease, linear) */
+    animation-iteration-count: 1; /* Number of times the animation should repeat (1 for one-time) */
+    animation-fill-mode: forwards; /* Keeps the final state of the animation after it finishes */
+  }
+  
+
+  @keyframes scaleOut {
+    0% {
+      transform: scale(1); 
+    }
+    100% {
+      transform: scale(0); 
+    }
+  }
+  
+  /* Apply the animation to an element */
+  .scaleOut-animation {
+    animation-name: scaleOut; /* Use the keyframes animation */
+    animation-duration: 1s; /* Animation duration in seconds */
+    animation-timing-function: ease; /* Animation timing function (e.g., ease, linear) */
+    animation-iteration-count: 1; /* Number of times the animation should repeat (1 for one-time) */
+    animation-fill-mode: forwards; /* Keeps the final state of the animation after it finishes */
+  }
+  
