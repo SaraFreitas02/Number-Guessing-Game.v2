@@ -94,7 +94,17 @@
   .bottom40 {
     bottom: -30vh;
   }
-
+  
+/* Exceptions */
+  @media only screen and (max-width: 780px) {
+    .bottom0 {
+      bottom: -20vh;
+    }
+    
+    .bottom40 {
+      bottom: -15vh;
+    }
+  }
 
 /* Elements Adjustments */
   
