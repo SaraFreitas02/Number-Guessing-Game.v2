@@ -52,7 +52,7 @@ $(document).ready(function () { //when document ready
 
         //update initial page
         const initialPage = $("#initialPage");
-        initialPage.addClass("width100"); //set width to 100%
+        initialPage.removeClass("width100"); //remove width restriction
 
         //update game title
         gameTitle.removeClass("width33"); //remove width restriction
