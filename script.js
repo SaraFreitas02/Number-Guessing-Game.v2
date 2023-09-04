@@ -73,7 +73,8 @@ $(document).ready(function () { //when document ready
 
         //change display lives and points
          //remove current displays
-         livesLost.removeClass("relative-position");
+         livesLost.removeClass("absolute-position");
+         livesLost.removeClass("bottom0");
          livesCurrent.removeClass("bottom0");
          ptsArea.removeClass("bottom40");
          //add new displays
@@ -123,7 +124,8 @@ $(document).ready(function () { //when document ready
  
          //change display lives and points
           //add new displays
-          livesLost.addClass("relative-position");
+          livesLost.addClass("absolute-position");
+          livesLost.addClass("bottom0");
           livesCurrent.addClass("bottom0");
           ptsArea.addClass("bottom40");
           //remove current displays
@@ -135,7 +137,8 @@ $(document).ready(function () { //when document ready
      }
 
      //call the function
-     window.addEventListener("resize", adjustLayout);
+     adjustLayout(); //on load
+     window.addEventListener("resize", adjustLayout); //to adapt change
 
     //Hide all elements that should not appear on load 
      gameTitle.hide();
@@ -234,16 +237,16 @@ $(document).ready(function () { //when document ready
         //set alert message if input value higher than limit
         if (input.val() > 10) {
             alertMsg.text("The number must be lower than 11.")
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //set alert message if input lower than minimum    
         } else if (input.val() < 1) {
             alertMsg.text("The number must be higher than 0.");
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //evaluate input value    
         } else {
@@ -346,16 +349,16 @@ $(document).ready(function () { //when document ready
         //set alert message if input value higher than limit
         if (input.val() > 25) {
             alertMsg.text("The number must be lower than 26.")
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //set alert message if input lower than minimum       
         } else if (input.val() < 1) {
             alertMsg.text("The number must be higher than 0.");
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //evaluate input value    
         } else {
@@ -457,16 +460,16 @@ $(document).ready(function () { //when document ready
         //set alert message if input value higher than limit
         if (input.val() > 50) {
             alertMsg.text("The number must be lower than 51.")
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //set alert message if input lower than minimum       
         } else if (input.val() < 1) {
             alertMsg.text("The number must be higher than 0.");
-            alertMsg.show(500);
+            alertMsg.fadeIn(1000);
             input.css("border-color", "rgb(180, 22, 70)");
-            alertMsg.delay(1000).hide(500);
+            alertMsg.delay(1000).fadeOut(1000);
 
         //evaluate input value      
         } else {
