@@ -230,8 +230,8 @@
     bottom: -15vh;
   }
 
-  label, p, h1, button, input {
-    font-size: smaller;
+  label {
+    font-size: 14px;
    }
 }
 
