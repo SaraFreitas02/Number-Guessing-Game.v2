@@ -25,6 +25,117 @@ $(document).ready(function () { //when document ready
 
      const gameOverPage = $("#gameOverPage"); //select game over page
      const totalPts = $("#totalPoints"); //select total points display
+    
+    //Adapt website depending on window width 
+     //function
+     function adjustLayout (){
+      if (window.innerWidth > 1200){
+      
+        //update gaming area
+        const gamingArea = $("#gamingArea");
+          //change width limit
+          gamingArea.removeClass("width50");
+          gamingArea.addClass("width100");
+        
+        //update initial page
+        const initialPage = $("#initialPage");
+          //create width limit
+          initialPage.addClass("width100");
+
+        //update gaming header
+        const gamingHeader = $("#gamingHeader");
+          //edit display
+          gamingHeader.addClass("row");  
+          gamingHeader.addClass("just-cont-flex-end");  
+          gamingHeader.addClass("width100");
+          
+        //change width limit of game title
+        gameTitle.addClass("width33");
+        
+        //update hearts and points desktop
+        const h_pts_desktop = $("#heartsAndPtsDesktop");
+          //edit display
+          h_pts_desktop.addClass("width33");
+          h_pts_desktop.addClass("relative-position");
+
+        //update hearts and points mobile
+        const h_pts_mobile = $("#heartsAndPtsMobile");
+          //remove display rules
+          h_pts_mobile.removeClass("");
+
+        //move lives and points
+         //grab them
+         h_pts_mobile.empty();
+         //place them 
+         h_pts_desktop.append(livesLost);
+         h_pts_desktop.append(livesCurrent);
+         h_pts_desktop.append(ptsArea);
+
+        //change display lives and points
+         //remove current displays
+         livesLost.removeClass("relative-position");
+         livesCurrent.removeClass("bottom0");
+         ptsArea.removeClass("bottom40");
+         //add new displays
+         ptsArea.addClass("right-upper040");
+         livesCurrent.addClass("right-upper00");
+         livesCurrent.addClass("just-cont-flex-end");
+         livesLost.addClass("just-cont-flex-end");
+      } else {
+           //update gaming area
+           const gamingArea = $("#gamingArea");
+           //change width limit
+           gamingArea.addClass("width50");
+           gamingArea.removeClass("width100");
+         
+         //update initial page
+         const initialPage = $("#initialPage");
+           //remove width limit
+           initialPage.removeClass("width100");
+ 
+         //update gaming header
+         const gamingHeader = $("#gamingHeader");
+           //remove display
+           gamingHeader.removeClass();  
+           
+         //remove width limit of game title
+         gameTitle.removeClass("width33");
+         
+         //update hearts and points desktop
+         const h_pts_desktop = $("#heartsAndPtsDesktop");
+           //remove display
+           h_pts_desktop.removeClass();
+ 
+         //update hearts and points mobile
+         const h_pts_mobile = $("#heartsAndPtsMobile");
+           //add display 
+           h_pts_mobile.addClass("column-reverse");
+           h_pts_mobile.addClass("align-items-center");
+           h_pts_mobile.addClass("relative-position");
+ 
+         //move lives and points
+          //grab them
+          h_pts_desktop.empty();
+          //place them 
+          h_pts_mobile.append(livesLost);
+          h_pts_mobile.append(livesCurrent);
+          h_pts_mobile.append(ptsArea);
+ 
+         //change display lives and points
+          //add new displays
+          livesLost.addClass("relative-position");
+          livesCurrent.addClass("bottom0");
+          ptsArea.addClass("bottom40");
+          //remove current displays
+          ptsArea.removeClass("right-upper040");
+          livesCurrent.removeClass("right-upper00");
+          livesCurrent.removeClass("just-cont-flex-end");
+          livesLost.removeClass("just-cont-flex-end");
+      }
+     }
+
+     //call the function
+     window.addEventListener("resize", adjustLayout);
 
     //Hide all elements that should not appear on load 
      gameTitle.hide();
@@ -40,51 +151,6 @@ $(document).ready(function () { //when document ready
      livesCurrent.hide();
      ptsArea.hide();
      gameOverPage.hide();
-    
-    //Update window if page opened on mobile 
-     if (window.innerWidth < 768){
-
-        //update gaming area
-        const gamingArea = $("#gamingArea");
-          //change width to 50% instead of 100%
-          gamingArea.removeClass("width100");
-          gamingArea.addClass("width50");
-
-        //update initial page
-        const initialPage = $("#initialPage");
-        initialPage.removeClass("width100"); //remove width restriction
-
-        //update game title
-        gameTitle.removeClass("width33"); //remove width restriction
-
-        //update gaming header
-        const gamingHeader = $("#gamingHeader");
-        gamingHeader.removeClass(); //remove all classes to 'hide it'
-
-        //update hearts and pts display
-        const heartsAndPts = $("#heartsAndPts");
-        const heartsAndPts2 = $("#heartsAndPts2");
-          //remove lives and points from default parent
-          heartsAndPts.empty();
-
-          //append lives and point to new parent
-          heartsAndPts2.append(livesLost);
-          heartsAndPts2.append(livesCurrent);
-          heartsAndPts2.append(ptsArea);
-
-        //update lives lost display
-        livesLost.removeClass("just-cont-flex-end");
-        livesLost.addClass("relative-position");
-
-        //update current lives display
-        livesCurrent.removeClass("just-cont-flex-end");
-        livesCurrent.removeClass("right-upper00");
-        livesCurrent.addClass("bottom0");
-       
-        //update points display
-        ptsArea.removeClass("right-upper040");
-        ptsArea.addClass("bottom40");
-     }
 
     //Function to animate page on load 
      function intro() {

@@ -27,6 +27,10 @@
     justify-content: center;
   }
 
+  .just-cont-space-between {
+    justify-content: space-between;
+  }
+
   /* Size */
   .height50 {
     height: 50%;
@@ -89,12 +93,10 @@
   
   .bottom0 {
     bottom: 0;
-    margin-bottom: 0px;
   }
   
   .bottom40 {
     bottom: 40px;
-    margin-bottom: 40px;
   }
 
 
@@ -268,4 +270,21 @@
   animation-timing-function: linear; /* set the speed development */
   animation-iteration-count: 1; /* set repetition times */
   animation-fill-mode: forwards; /* keep the end frame */
+ }
+
+ @media only screen and (max-width: 768px) {
+  #gamingArea {
+    width: 50;
+  }
+  #livesLost {
+    position: relative;
+  }
+  #livesCurrent {
+    bottom: 0;
+    margin-bottom: 0px;
+  }
+  #ptsArea {
+    bottom: 40px;
+    margin-bottom: 40px;
+  }
  }
