@@ -422,6 +422,10 @@ $(document).ready(function () { //when document ready
 
                 input.val(''); //reset input
 
+                //reduce 1 life
+                const currentlivesCurrent = livesCurrent.children().eq(livesCurrentIndex); //select the heart icon to hide
+                currentlivesCurrent.addClass("scaleOut-animation"); //hide it and animate it
+
 
                //end game when player has no lives left
                 livesCurrentIndex = (livesCurrentIndex + 1) % livesCurrent.children().length; //check which life player is at
@@ -533,6 +537,9 @@ $(document).ready(function () { //when document ready
  
                  input.val(''); //reset input
  
+                //reduce 1 life
+                const currentlivesCurrent = livesCurrent.children().eq(livesCurrentIndex); //select the heart icon to hide
+                currentlivesCurrent.addClass("scaleOut-animation"); //hide it and animate it
  
                 //end game when player has no lives left
                  livesCurrentIndex = (livesCurrentIndex + 1) % livesCurrent.children().length; //check which life player is at
