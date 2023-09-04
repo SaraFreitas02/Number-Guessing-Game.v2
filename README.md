@@ -1,4 +1,5 @@
 # Number Guessing Game (.v2)
+
 ## Description
 This is a simple *Number Guessing Game* where users attempt to match their guess with a computer-generated number. Depending on the selected difficulty level, players may need to guess a number between *1 and 10*, *1 and 25*, or *1 and 50*.
 
@@ -11,6 +12,23 @@ My goal was to make the game more engaging and dynamic, and this journey allowed
 
 The result is a game that, despite its simplicity, is both addictive and visually captivating.
 
+## Tested Compatibility 
+*Last updated: 04-09-2023*
+### Browsers
+The game was tested and works as expected in the following browsers and versions:
+- **Google Chrome** *116.0.5845.141 (Official Build) (64-bit)*
+- **Mozilla Firefox** *117.0 (64-bit)*
+- **Microsoft Edge** *116.0.1938.69 (Official build) (64-bit)*
+- **Opera** *101.0.4843.43*
+- **Safari** *IOS 16.6*
+
+### Devices
+The game is built to work in the following devices:
+- **Desktop Computer**
+- **Tablet**
+- **Mobile Phone**
+
+The game was ran in all three and worked as expected.
 ## How to use
 ### 1. Access the game
 To access the game, open the `index.html` file in your browser engine or click [here](https://sarafreitas02.github.io/Number-Guessing-Game.v2/).
@@ -50,6 +68,7 @@ To start a new game, simply **click the *'Play Again'*** button displayed on the
 - Alert messages to let you know if your input is valid.
 - Various changes of content without changing the page.
 - Visual feedback provided not only through animations but also via interactive buttons.
+- Cross-device compatibility: desktop, tablet and phone.
 
 ## Customization
 Please feel free to incorporate this code into your projects while adhering to the [license](LICENSE) it is distributed under. You're welcome to customize it to your heart's content—alter backgrounds, displays, colors, and more. The sky is the limit!
