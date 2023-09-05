@@ -510,7 +510,7 @@ $(document).ready(function () { //when document ready
  
  
                  //add points
-                 let ptsWon = 20;
+                 let ptsWon = 30;
                  let ptsText = ptsCount.text(); //select the points display text
                  let currentPts = parseInt(ptsText, 10); //select the current points value
                  let newPts = (currentPts + ptsWon).toString().padStart(4, '0'); //set the new points value (with 2 zeros before)
