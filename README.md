@@ -12,23 +12,6 @@ My goal was to make the game more engaging and dynamic, and this journey allowed
 
 The result is a game that, despite its simplicity, is both addictive and visually captivating.
 
-## Tested Compatibility 
-*Last updated: 04-09-2023*
-### Browsers
-The game was tested and works as expected in the following browsers and versions:
-- **Google Chrome** *116.0.5845.141 (Official Build) (64-bit)*
-- **Mozilla Firefox** *117.0 (64-bit)*
-- **Microsoft Edge** *116.0.1938.69 (Official build) (64-bit)*
-- **Opera** *101.0.4843.43*
-- **Safari** *IOS 16.6*
-
-### Devices
-The game is built to work in the following devices:
-- **Desktop Computer**
-- **Tablet**
-- **Mobile Phone**
-
-The game was ran in all three and worked as expected.
 ## How to use
 ### 1. Access the game
 To access the game, open the `index.html` file in your browser engine or click [here](https://sarafreitas02.github.io/Number-Guessing-Game.v2/).
@@ -40,12 +23,52 @@ When the game loads, it will show the game's name along with three buttons, each
 - **Medium:** Guess numbers from *1 to 25.*
 - **Hard:** Guess numbers from *1 to 50.*
 
+<br>
+<br>
+<br>
+
+![Game Page](/Images/Game%20Ilustration/Page%20Load.png)
+
+<br>
+<br>
+<br>
+
 ### 3. Make your guess
-Once you've chosen a difficulty level, the page will transform. It will feature an empty input field and a button labeled "Guess." Additionally, you'll find 10 hearts and a points display.
+Once you've chosen a difficulty level, the page will transform. It will feature an empty input field and a button labeled "Guess." Additionally, you'll find 10 hearts and points. The display depends on the device.
+
+<br>
+<br>
+<br>
+
+![Start Game](Images/Game%20Ilustration/Start%20display.png)
+
+<br>
+<br>
+<br>
 
 - To participate, simply enter your guess into the field and click the "Guess" button.
+
+<br>
+<br>
+<br>
+
+![Make a Guess](/Images/Game%20Ilustration/Guess.png)
+
+<br>
+<br>
+<br>
   
 - The game will promptly inform you whether your guess was correct or not.
+
+<br>
+<br>
+<br>
+
+![Win or loss alert](/Images/Game%20Ilustration/Win%20or%20loss.png)
+
+<br>
+<br>
+<br>
 
 ### 4. Get it right or get it wrong
 If you correctly guess a number, you'll earn a specific number of points based on the difficulty level you selected at the beginning:
@@ -56,12 +79,42 @@ If you correctly guess a number, you'll earn a specific number of points based o
 
 Your points will accumulate throughout the game.
 
+<br>
+<br>
+<br>
+
+![Points](Gifs/Pts%20gif.gif)
+
+<br>
+<br>
+<br>
+
 However, if you make an incorrect guess, you'll **lose a heart** (life). You start with a total of 10 lives.
+
+<br>
+<br>
+<br>
+
+![Lose a heart](Gifs/Heart%20Gif.gif)
+
+<br>
+<br>
+<br>
 
 ### 5. Game Over... Play again
 If you **run out of lives**, the game will come to an end, and a *'Game Over'* page will appear. Here, you can view the total number of points you earned during the round.
 
 To start a new game, simply **click the *'Play Again'*** button displayed on the *'Game Over'* page. This will take you back to the beginning, where you can once again choose a difficulty level.
+
+<br>
+<br>
+<br>
+
+![Game over page](Images/Game%20Ilustration/Game%20over%20page.png)
+
+<br>
+<br>
+<br>
 
 ## Features
 - Various animations throughout the game: on loading, changing content, guessing, losing lives...
@@ -69,6 +122,34 @@ To start a new game, simply **click the *'Play Again'*** button displayed on the
 - Various changes of content without changing the page.
 - Visual feedback provided not only through animations but also via interactive buttons.
 - Cross-device compatibility: desktop, tablet and phone.
+
+## Tested Compatibility 
+*Last updated: 04-09-2023*
+### Browsers
+The game was tested and works as expected in the following browsers and versions:
+- **Google Chrome** *116.0.5845.141 (Official Build) (64-bit)*
+- **Mozilla Firefox** *117.0 (64-bit)*
+- **Microsoft Edge** *116.0.1938.69 (Official build) (64-bit)*
+- **Opera** *101.0.4843.43*
+- **Safari** *IOS 16.6*
+  
+<br>
+<br>
+<br>
+
+![Browser Testing](/Images/Browsers%20Testing/browsers.png)
+
+<br>
+<br>
+<br>
+
+### Devices
+The game is built to work in the following devices:
+- **Desktop Computer**
+- **Tablet**
+- **Mobile Phone**
+
+The game was ran in all three and worked as expected.
 
 ## Customization
 Please feel free to incorporate this code into your projects while adhering to the [license](LICENSE) it is distributed under. You're welcome to customize it to your heart's content—alter backgrounds, displays, colors, and more. The sky is the limit!
