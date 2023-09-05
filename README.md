@@ -6,7 +6,7 @@ This is a simple *Number Guessing Game* where users attempt to match their guess
 Different feedback will be given throughout the game, including the loss of lives, accumulation of points, and more.
 
 ## Origins and Evolution
-This project initially began as an opportunity to practice jQuery. I decided to take the basic and straightforward [JavaScript version](https://github.com/SaraFreitas02/NumGuessGame.js-practice) of this game and elevate it, hence the "*v2*" in the project's name.
+This project initially began as an opportunity to practice jQuery. I decided to take the basic and straightforward [JavaScript-Practice version](https://github.com/SaraFreitas02/NumGuessGame.js-practice) of this game and elevate it, hence the "*v2*" in the project's name.
 
 My goal was to make the game more engaging and dynamic, and this journey allowed me to explore CSS animations for the first time.
 
