@@ -178,7 +178,7 @@ This project is licensed under the MIT License, which means you are free to use,
 
 ### Disclaimer
 
-Please be aware that while this project is provided under the MIT License, it is your responsibility to ensure that your usage complies with all applicable laws and regulations. The project is a work in progress and may have limitations or issues.
+Please be aware that while this project is provided under the MIT License, it is your responsibility to ensure that your usage complies with all applicable laws and regulations.
 
 Feel free to use this project for your needs or contribute to its development.
 
