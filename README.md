@@ -6,24 +6,27 @@ This is a simple *Number Guessing Game* where users attempt to match their guess
 Different feedback will be given throughout the game, including the loss of lives, accumulation of points, and more.
 
 ## Table of Contents
- - [Description](#description)
- - [Origins and Evolution](#origins-and-evolution)
- - [How to use](#how-to-use)
-   - [1. Access the game](#1-access-the-game)
-   - [2. Choose difficulty level](#2-choose-difficulty-level)
-   - [3. Make your guess](#3-make-your-guess)
-   - [4. Get it right or get it wrong](#4-get-it-right-or-get-it-wrong)
-   - [5. Game Over... Play again](#5-game-over-play-again)
- - [Features](#features)
- - [Tested Compatibility](#tested-compatibility)
-   - [Browsers](#browsers)
-   - [Devices](#devices)
- - [Customization](#customization)
- - [Contributions](#contributions) 
- - [License](#license)
-    - [Mit License](#mit-license)
-    - [Crediting us](#crediting-us)
- - [Attributions](#attributions)
+- [Number Guessing Game (.v2)](#number-guessing-game-v2)
+  - [Description](#description)
+  - [Table of Contents](#table-of-contents)
+  - [Origins and Evolution](#origins-and-evolution)
+  - [How to use](#how-to-use)
+    - [1. Access the game](#1-access-the-game)
+    - [2. Choose difficulty level](#2-choose-difficulty-level)
+    - [3. Make your guess](#3-make-your-guess)
+    - [4. Get it right or get it wrong](#4-get-it-right-or-get-it-wrong)
+    - [5. Game Over... Play again](#5-game-over-play-again)
+  - [Features](#features)
+  - [Tested Compatibility](#tested-compatibility)
+    - [Browsers](#browsers)
+    - [Devices](#devices)
+  - [Customization](#customization)
+  - [Contributions](#contributions)
+  - [License](#license)
+    - [MIT License](#mit-license)
+      - [Crediting us](#crediting-us)
+    - [Disclaimer](#disclaimer)
+  - [Attributions](#attributions)
 
 ## Origins and Evolution
 This project initially began as an opportunity to practice jQuery. I decided to take the basic and straightforward [JavaScript-Practice version](https://github.com/SaraFreitas02/NumGuessGame.js-practice) of this game and elevate it, hence the "*v2*" in the project's name.
@@ -198,7 +201,7 @@ Although this project is under the MIT License (as stated above), we would great
 - Mention any changes you've made to the code.
 - Provide a link to this project's repository.
 
-Your support and collaboration mean a lot to us!
+Your support and collaboration mean a lot to us! For more clarification, visit the [Crediting Us file](Crediting-us.md) provided in our project.
 
 ### Disclaimer
 
