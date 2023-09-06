@@ -5,6 +5,26 @@ This is a simple *Number Guessing Game* where users attempt to match their guess
 
 Different feedback will be given throughout the game, including the loss of lives, accumulation of points, and more.
 
+## Table of Contents
+ - [Description](#description)
+ - [Origins and Evolution](#origins-and-evolution)
+ - [How to use](#how-to-use)
+   - [1. Access the game](#1-access-the-game)
+   - [2. Choose difficulty level](#2-choose-difficulty-level)
+   - [3. Make your guess](#3-make-your-guess)
+   - [4. Get it right or get it wrong](#4-get-it-right-or-get-it-wrong)
+   - [5. Game Over... Play again](#5-game-over-play-again)
+ - [Features](#features)
+ - [Tested Compatibility](#tested-compatibility)
+   - [Browsers](#browsers)
+   - [Devices](#devices)
+ - [Customization](#customization)
+ - [Contributions](#contributions) 
+ - [License](#license)
+    - [Mit License](#mit-license)
+    - [Crediting us](#crediting-us)
+ - [Attributions](#attributions)
+
 ## Origins and Evolution
 This project initially began as an opportunity to practice jQuery. I decided to take the basic and straightforward [JavaScript-Practice version](https://github.com/SaraFreitas02/NumGuessGame.js-practice) of this game and elevate it, hence the "*v2*" in the project's name.
 
@@ -163,18 +183,22 @@ Contributions are encouraged! If you'd like to contribute to this project:
 4. Push to the branch: `git push origin feature-name`
 5. Submit a pull request.
 
-## Attributions
-This game uses *free icons* from [**FontAwesome**](https://fontawesome.com/) that are generously provided under an [**MIT License**](https://fontawesome.com/).
-
-For more details regarding attributions or copyright notices visit the [Attributions File](Attributions.md) on this repository.
-
 ## License
 
 This project is open-source and available under the [MIT License](LICENSE).
 
 ### MIT License
 
-This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code as long as you include the original license text.
+This project is licensed under the MIT License, which means you are free to use, modify, and distribute the code as long as you include the original [license text](LICENSE).
+
+#### Crediting us
+
+Although this project is under the MIT License (as stated above), we would greatly appreciate it if you could:
+
+- Mention any changes you've made to the code.
+- Provide a link to this project's repository.
+
+Your support and collaboration mean a lot to us!
 
 ### Disclaimer
 
@@ -183,4 +207,9 @@ Please be aware that while this project is provided under the MIT License, it is
 Feel free to use this project for your needs or contribute to its development.
 
 For more details, refer to the [MIT License](LICENSE) file in this repository.
+
+## Attributions
+This game uses *free icons* from [**FontAwesome**](https://fontawesome.com/) that are generously provided under an [**MIT License**](https://fontawesome.com/).
+
+For more details regarding attributions or copyright notices visit the [Attributions File](Attributions.md) on this repository.
 
